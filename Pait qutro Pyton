@@ -1,0 +1,26 @@
+# условие числа нечетные 5 < N < 101
+# N, M = map(int, input().split()) # это если самому вводить обе цифры пример: 7 21
+N = int(input())
+M = N * 3
+string = 'WELCOME'
+print(f'Size: {N} x {M}')
+d=3
+for i in range(N+1):
+    center_string = '.|.' + '.|.' * i * 2
+    begin_string = '-' * int((M - len(center_string))/2)
+    end_string = '-' * int((M - len(center_string))/2)
+    welcome_center = 'WELCOME'
+    welcome_begin = '-' * int((M - len(welcome_center)) / 2)
+    welcome_end = '-' * int((M - len(welcome_center)) / 2)
+    after_welcome_center = '.|.' * int((N + 1) - d)
+    after_welcome_begin = '-' * int((M - len(after_welcome_center)) / 2)
+    after_welcome_end = '-' * int((M - len(after_welcome_center)) / 2)
+    if 0 <= i < (N-1)/2:
+        print(begin_string + center_string + end_string)
+    elif i == (N+1)/2:
+        print(welcome_begin + welcome_center + welcome_end)
+    elif i > (N+1)/2:
+        print(after_welcome_begin + after_welcome_center + after_welcome_end)
+        d += 2
+
+#
